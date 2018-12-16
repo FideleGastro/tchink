@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "scripts": {
-    "start": "npm start --prefix application/",
-    "build": "npm build --prefix application/"
+    "api": "npm start --prefix api/",
+    "start": "npm run start --prefix application/",
+    "build": "npm run build --prefix application/"
   },
   "author": "",
   "license": "ISC"

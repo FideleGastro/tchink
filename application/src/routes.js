@@ -14,7 +14,12 @@ export default class Routes {
       {
         path: '/',
         exact: true,
-        component: import('./app/components/home'),
+        component: import('./app/components/page/home'),
+      },
+      {
+        path: '/exemple',
+        exact: true,
+        component: import('./app/components/exemple/home'),
       },
     ];
 

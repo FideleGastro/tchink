@@ -14,7 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import {mainListItems, secondaryListItems, SiteDetails} from './listItems';
+import { mainListItems, secondaryListItems, SiteDetails } from './listItems';
 import SimpleLineChart from './SimpleLineChart';
 import SimpleTable from './SimpleTable';
 
@@ -101,18 +101,18 @@ class Home extends React.Component {
   state = {
     open: true,
   };
-  
+
   handleDrawerOpen = () => {
     this.setState({ open: true });
   };
-  
+
   handleDrawerClose = () => {
     this.setState({ open: false });
   };
-  
+
   render() {
     const { classes } = this.props;
-    
+
     return (
       <React.Fragment>
         <CssBaseline />
@@ -168,7 +168,7 @@ class Home extends React.Component {
             <List>{mainListItems}</List>
             <Divider />
             <List>{secondaryListItems}</List>
-            <Divider/>
+            <Divider />
             <List>{SiteDetails}</List>
           </Drawer>
           <main className={classes.content}>
