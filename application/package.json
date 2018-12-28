@@ -5,7 +5,7 @@
     "dev": "node server.js",
     "build": " npm i && next build",
     "prestart": "npm run clean && npm run build",
-    "start": "next start -p $PORT",
+    "start": "NODE_ENV=production node server.js -p $PORT",
     "clean": "rm -rf .next static/manifest",
     "heroku-postbuild": "npm run build",
     "dev-2": "next"
@@ -16,6 +16,7 @@
     "next-manifest": "latest",
     "next-offline": "latest",
     "express": "latest",
+    "compression": "latest",
     "jss": "latest",
     "lru-cache": "latest",
     "next": "latest",
