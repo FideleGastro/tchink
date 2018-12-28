@@ -73,12 +73,12 @@
   },
   "chunks": {
     "byName": {
-      "static/O5P22sno91okvur9tshtc/pages/_app.js": 0,
-      "static/O5P22sno91okvur9tshtc/pages/_document.js": 1,
-      "static/O5P22sno91okvur9tshtc/pages/blog.js": 2,
-      "static/O5P22sno91okvur9tshtc/pages/header.js": 3,
-      "static/O5P22sno91okvur9tshtc/pages/index.js": 4,
-      "static/O5P22sno91okvur9tshtc/pages/_error.js": 5
+      "static/LJIgBurersh4_9U8TO8g1/pages/_app.js": 0,
+      "static/LJIgBurersh4_9U8TO8g1/pages/_document.js": 1,
+      "static/LJIgBurersh4_9U8TO8g1/pages/blog.js": 2,
+      "static/LJIgBurersh4_9U8TO8g1/pages/header.js": 3,
+      "static/LJIgBurersh4_9U8TO8g1/pages/index.js": 4,
+      "static/LJIgBurersh4_9U8TO8g1/pages/_error.js": 5
     },
     "bySource": {},
     "usedIds": [

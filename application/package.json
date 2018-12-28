@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "node server.js",
-    "clean": "rm -rf .next static/manifest",
     "build": "next build",
     "prestart": "npm run clean && npm run build",
-    "start": "next build"
+    "start": "next start -p $PORT",
+    "clean": "rm -rf .next static/manifest",
+    "heroku-postbuild": "npm run build",
+    "dev-2": "next"
   },
   "dependencies": {
     "@material-ui/core": "latest",

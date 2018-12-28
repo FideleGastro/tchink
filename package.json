@@ -5,16 +5,15 @@
   "main": "index.js",
   "scripts": {
     "api": "npm start --prefix api/",
-    "start-n": "npm run start --prefix application/",
-    "build-n": "npm run build --prefix application/",
-    "dev": "next --prefix application/",
-    "build": "next build --prefix application/",
-    "start": "next start -p $PORT --prefix application/",
-    "heroku-postbuild": "npm run build --prefix application/"
+    "start": "npm run start --prefix application/",
+    "build": "npm run build --prefix application/",
+    "heroku-postbuild": "npm run heroku-postbuild --prefix application/"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "compression": "^1.7.3"
+    "next": "^7.0.2",
+    "react": "latest",
+    "react-dom": "latest"
   }
 }
