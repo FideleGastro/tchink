@@ -6,7 +6,7 @@
     "clean": "rm -rf .next static/manifest",
     "build": "next build",
     "prestart": "npm run clean && npm run build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next build"
   },
   "dependencies": {
     "@material-ui/core": "latest",
