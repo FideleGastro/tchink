@@ -62,6 +62,8 @@ typings/
 # WebStorm configurations
 .idea
 
+.vscode
+
 # Ignore the etc folders created by
 etc/
 
