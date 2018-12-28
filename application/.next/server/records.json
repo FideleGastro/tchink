@@ -78,16 +78,22 @@
       "static/LJIgBurersh4_9U8TO8g1/pages/blog.js": 2,
       "static/LJIgBurersh4_9U8TO8g1/pages/header.js": 3,
       "static/LJIgBurersh4_9U8TO8g1/pages/index.js": 4,
-      "static/LJIgBurersh4_9U8TO8g1/pages/_error.js": 5
+      "static/LJIgBurersh4_9U8TO8g1/pages/_error.js": 5,
+      "static/rwN3Fd5_9UBlmbGu_cr94/pages/_app.js": 6,
+      "static/rwN3Fd5_9UBlmbGu_cr94/pages/_document.js": 7,
+      "static/rwN3Fd5_9UBlmbGu_cr94/pages/blog.js": 8,
+      "static/rwN3Fd5_9UBlmbGu_cr94/pages/header.js": 9,
+      "static/rwN3Fd5_9UBlmbGu_cr94/pages/index.js": 10,
+      "static/rwN3Fd5_9UBlmbGu_cr94/pages/_error.js": 11
     },
     "bySource": {},
     "usedIds": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5
+      10,
+      11,
+      6,
+      7,
+      8,
+      9
     ]
   }
 }
