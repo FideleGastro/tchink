@@ -5,10 +5,9 @@
     "dev": "node server.js",
     "build": " npm i && next build",
     "prestart": "npm run clean && npm run build",
-    "start": "NODE_ENV=production node server.js -p $PORT",
+    "start": "next start -p $PORT",
     "clean": "rm -rf .next static/manifest",
-    "heroku-postbuild": "npm run build",
-    "dev-2": "next"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@material-ui/core": "latest",
