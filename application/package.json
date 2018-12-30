@@ -12,22 +12,23 @@
   },
   "dependencies": {
     "@material-ui/core": "latest",
-    "rimraf": "^2.6.2",
-    "next-manifest": "latest",
-    "next-offline": "latest",
-    "express": "latest",
+    "@material-ui/icons": "^3.0.1",
     "compression": "latest",
+    "express": "latest",
+    "isomorphic-fetch": "^2.2.1",
     "jss": "latest",
     "lru-cache": "latest",
     "next": "latest",
     "next-babel-minify": "^1.0.0",
+    "next-manifest": "latest",
+    "next-offline": "latest",
     "prop-types": "latest",
     "react": "latest",
-    "styled-components": "latest",
     "react-dom": "latest",
     "react-jss": "^8.1.0",
-    "sw-precache-webpack-plugin": "^0.11.5",
-    "isomorphic-fetch": "^2.2.1"
+    "rimraf": "^2.6.2",
+    "styled-components": "latest",
+    "sw-precache-webpack-plugin": "^0.11.5"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0"
