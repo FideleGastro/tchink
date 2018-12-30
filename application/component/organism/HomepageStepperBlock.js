@@ -9,18 +9,30 @@ import Typography from '@material-ui/core/Typography';
 
 const Block = styled.div`
     width: 100%;
-    height: 50vh;
+    min-height: 50%;
     background: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding:50px 0;
+   
 `;
 
 const Content = styled.div`
     display: flex;
     flex-direction: column;
     padding:50px;
+`;
+
+const Text = styled.p`
+    font-family: Montserrat;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.19;
+  letter-spacing: normal;
+  text-align: center;
+  color: #dedede;
 `;
 
 const Title = styled.h2`
@@ -51,7 +63,7 @@ const styles = theme => ({
 });
 
 function getSteps() {
-    return ['TROUVE UN BAR', 'FAIRE PIPI DANS UN BAR', 'FAIRE CACA DANS UN BAR'];
+    return ['TROUVE UN BAR', 'FAIRE PIPI', 'FAIRE CACA'];
 }
 
 function getStepContent(step) {
@@ -154,10 +166,11 @@ class HomepageStepperBlock extends React.Component {
                                 </Step>
                             );
                         })}
+
                     </Stepper>
-                    <Title>
+                    <Text>
                         {getStepContent(activeStep)}
-                    </Title>
+                    </Text>
                 </Content>
             </Block>
         );

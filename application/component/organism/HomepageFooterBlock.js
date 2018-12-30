@@ -5,15 +5,17 @@ import Link from 'next/link'
 const Block = styled.div`
     width: 100%;
     min-height: 50%;
-    background: yellow;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
+  
 `;
 
 const Content = styled.div`
     display: flex;
     flex-direction: column;
+    text-align:center;
 `;
 
 const Title = styled.h1`
@@ -47,14 +49,15 @@ const LinkRounded = styled.a`
     
 `;
 
-class HomepageInscriptionBlock extends Component {
+class HomepageFooterBlock extends Component {
     render() {
         return (
             <>
                 <Block>
                     <Content>
-                        <Title>L’APP QUI RÉVOLUTIONNE VOS SOIRÉES</Title>
-                        <Link href='/about'><LinkRounded>JE M’INSCRIS </LinkRounded></Link>
+                        <Title>Ceci est un Footer </Title>
+                        <p>ceci est la description du footer</p>
+
                     </Content>
                 </Block>
 
@@ -65,4 +68,4 @@ class HomepageInscriptionBlock extends Component {
 
 
 
-export default (HomepageInscriptionBlock);
+export default (HomepageFooterBlock);

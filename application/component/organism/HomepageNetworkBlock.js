@@ -9,6 +9,7 @@ const Block = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  
 `;
 
 const Content = styled.div`
@@ -47,14 +48,14 @@ const LinkRounded = styled.a`
     
 `;
 
-class HomepageInscriptionBlock extends Component {
+class HomepageNetworkBlock extends Component {
     render() {
         return (
             <>
                 <Block>
                     <Content>
-                        <Title>L’APP QUI RÉVOLUTIONNE VOS SOIRÉES</Title>
-                        <Link href='/about'><LinkRounded>JE M’INSCRIS </LinkRounded></Link>
+                        <Title>REJOINDRE NOTRE RÉSEAUX </Title>
+                        <Link href='/about'><LinkRounded>ÊTRE RÉFÉRENCÉ</LinkRounded></Link>
                     </Content>
                 </Block>
 
@@ -65,4 +66,4 @@ class HomepageInscriptionBlock extends Component {
 
 
 
-export default (HomepageInscriptionBlock);
+export default (HomepageNetworkBlock);
