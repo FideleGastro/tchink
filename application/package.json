@@ -8,8 +8,8 @@
     "dev": "next",
     "start:prod": "NODE_ENV=production node server.js",
     "start": "node server.js -p $PORT",
-    "build": "npm run clean && npm i && next build",
-    "heroku-postbuild": "npm run clean && npm i && next build"
+    "build": "npm i && npm run clean:build &&  next build",
+    "heroku-postbuild": " npm i && npm run clean:build && next build"
   },
   "dependencies": {
     "@material-ui/core": "^3.8.1",
