@@ -2,12 +2,9 @@
   "name": "ssr-caching",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server.js",
-    "build": " npm i && next build",
-    "prestart": "npm run clean && npm run build",
+    "dev": "next",
     "start": "next start -p $PORT",
-    "clean": "rm -rf .next static/manifest",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "next build"
   },
   "dependencies": {
     "@material-ui/core": "latest",
