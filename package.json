@@ -7,14 +7,9 @@
     "api": "npm start --prefix api/",
     "start": "npm run start --prefix application/",
     "build": "npm run build --prefix application/",
+    "dev": "npm run dev --prefix application/",
     "heroku-postbuild": "npm run heroku-postbuild --prefix application/"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "next": "^7.0.2",
-    "next-routes": "^1.4.2",
-    "react": "latest",
-    "react-dom": "latest"
-  }
+  "license": "ISC"
 }
