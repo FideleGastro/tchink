@@ -6,6 +6,7 @@
   "mongo": {
     "url": "mongodb://localhost:27107/tchink",
     "name": "mongo",
-    "connector": "mongodb"
+    "connector": "mongodb",
+    "lazyConnect": true
   }
 }
