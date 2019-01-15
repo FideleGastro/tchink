@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import ConnectForm from './ConnectForm';
+import InscriptionForm from './InscriptionForm';
 
 function TabContainer({ children, dir }) {
     return (
@@ -64,7 +65,7 @@ class FullWidthTabs extends React.Component {
                     index={this.state.value}
                     onChangeIndex={this.handleChangeIndex}
                 >
-                    <TabContainer dir={theme.direction}><ConnectForm /></TabContainer>
+                    <TabContainer dir={theme.direction}><InscriptionForm /></TabContainer>
                     <TabContainer dir={theme.direction}><ConnectForm /></TabContainer>
                 </SwipeableViews>
             </div>

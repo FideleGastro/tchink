@@ -7,6 +7,8 @@ import Fab from '@material-ui/core/Fab';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Home from '@material-ui/icons/Home';
+import { Store } from '../../src/context/store';
+import Link from 'next/link'
 
 const styles = theme => ({
     text: {
@@ -49,15 +51,24 @@ class Appbar extends Component {
             <div>
                 <AppBar position="fixed" color="primary" className={classes.appBar}>
                     <Toolbar className={classes.toolbar}>
-                        <IconButton color="inherit" aria-label="Home">
-                            <Home />
-                        </IconButton>
-                        <Fab color="secondary" aria-label="Search" className={classes.fabButton}>
-                            <SearchIcon />
-                        </Fab>
+                        <a href='/'>
+                            <IconButton color="inherit" aria-label="Home">
+                                <Home />
+                                {/* test :
+                            <Store.Consumer>
+                                {value => value.logged}
+                            </Store.Consumer> */}
+
+                            </IconButton>
+                        </a>
+                        <a href='/bar'>
+                            <Fab color="secondary" aria-label="Search" className={classes.fabButton}>
+                                <SearchIcon />
+                            </Fab>
+                        </a>
                         <div>
                             <IconButton color="inherit" aria-label="Account">
-                                <AccountCircle />
+                                <a href='/signin'><AccountCircle /></a>
                             </IconButton>
                         </div>
                     </Toolbar>

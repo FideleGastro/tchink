@@ -41,7 +41,7 @@ class TextFields extends React.Component {
     };
 
     onSubmit = (form) => {
-        axios.post('http://localhost:3000/signin/connection', { ...form }).then(response => {
+        axios.post('http://localhost:3000/signin/iscription', { ...form }).then(response => {
             console.log('res =>', response.data)
             //return response.data
         })
@@ -60,7 +60,16 @@ class TextFields extends React.Component {
                 {console.log('state =>', this.state)}
                 <StyledForm noValidate autoComplete="off" method="post" >
                     <TextField
-                        id="connect-email"
+                        id="inscription-nom-prenom"
+                        label="Nom / Prenom"
+                        style={{ margin: 8 }}
+                        fullWidth
+                        margin="normal"
+                        type="email"
+                        onChange={this.handleChange('nom-prenom')}
+                    />
+                    <TextField
+                        id="inscription-email"
                         label="Email"
                         style={{ margin: 8 }}
                         fullWidth
@@ -69,20 +78,36 @@ class TextFields extends React.Component {
                         onChange={this.handleChange('email')}
                     />
                     <TextField
-                        id="connect-password"
+                        id="inscription-date"
+                        label="Date de naissance"
+                        style={{ margin: 8 }}
+                        fullWidth
+                        margin="normal"
+                        type="date"
+                        onChange={this.handleChange('date')}
+                        InputLabelProps={{ shrink: true }}
+                    />
+                    <TextField
+                        id="inscription-password"
                         label="Mot de passe"
                         style={{ margin: 8 }}
                         fullWidth
                         margin="normal"
-                        name="3"
                         type="password"
                         onChange={this.handleChange('password')}
                     />
-
+                    <TextField
+                        id="inscription-tel"
+                        label="Téléphone"
+                        style={{ margin: 8 }}
+                        fullWidth
+                        margin="normal"
+                        type="number"
+                        onChange={this.handleChange('tel')}
+                    />
                     <Button onClick={() => this.onSubmit(this.state)} variant="contained" color="primary" className={classes.button}>
-                        CONNEXION
+                        CRÉER MON COMPTE
                     </Button>
-
                 </StyledForm>
             </Container>
         );

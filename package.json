@@ -7,7 +7,7 @@
     "api": "npm start --prefix api/",
     "start": "npm run start --prefix application/",
     "build": "npm run build --prefix application/",
-    "dev": "npm run dev --prefix application/",
+    "dev": "npm run dev2 --prefix application/",
     "heroku-postbuild": "npm run heroku-postbuild --prefix application/"
   },
   "author": "",

@@ -5,6 +5,10 @@ export default class extends React.Component {
     return { id }
   }
 
+  componentWillMount() {
+    console.log('=>', this.props);
+}
+
   render () {
     return (
       <div>

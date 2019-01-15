@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Document, { Head, Main, NextScript } from 'next/document';
 import flush from 'styled-jsx/server';
-
+import { Store } from '../src/context/store';
 class MyDocument extends Document {
     render() {
         const { pageContext } = this.props;
@@ -27,7 +27,9 @@ class MyDocument extends Document {
                     />
                 </Head>
                 <body>
+
                     <Main />
+
                     <NextScript />
                 </body>
             </html>

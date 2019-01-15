@@ -5,11 +5,18 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import getPageContext from '../src/getPageContext';
+import { Store } from '../src/context/store';
+
 
 class MyApp extends App {
     constructor() {
         super();
         this.pageContext = getPageContext();
+    }
+
+    isLogged = () => {
+        console.log('logged');
+        return 'titi';
     }
 
     componentDidMount() {
@@ -33,6 +40,7 @@ class MyApp extends App {
 
     render() {
         const { Component, pageProps } = this.props;
+
         return (
             <Container>
                 <Head>
@@ -54,10 +62,13 @@ class MyApp extends App {
                         <CssBaseline />
                         {/* Pass pageContext to the _document though the renderPage enhancer
                 to render collected styles on server-side. */}
-                        <Component pageContext={this.pageContext} {...pageProps} />
+
+                        <Store.Provider value={{ logged: this.isLogged() }}>
+                            <Component pageContext={this.pageContext} {...pageProps} />
+                        </Store.Provider>
                     </MuiThemeProvider>
                 </JssProvider>
-            </Container>
+            </Container >
         );
     }
 }
