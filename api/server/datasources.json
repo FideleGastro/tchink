@@ -4,9 +4,8 @@
     "connector": "memory"
   },
   "mongo": {
-    "url": "mongodb://localhost:27107/tchink",
+    "url": "mongodb://test02:test02@ds157864.mlab.com:57864/tchink",
     "name": "mongo",
-    "connector": "mongodb",
-    "lazyConnect": true
+    "connector": "loopback-connector-mongodb"
   }
 }
