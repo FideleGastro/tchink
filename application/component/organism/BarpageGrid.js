@@ -19,7 +19,7 @@ const styles = theme => ({
         backgroundColor: theme.palette.background.paper,
     },
     gridList: {
-        width: '100%',
+        width: '90vw',
         height: 450,
     },
     icon: {
