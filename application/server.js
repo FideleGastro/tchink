@@ -15,7 +15,7 @@ const handle = app.getRequestHandler()
 
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
-    length: function(n, key) {
+    length: function (n, key) {
         return n.toString().length + key.toString().length
     },
     max: 100 * 1000 * 1000, // 100MB cache soft limit
@@ -57,7 +57,7 @@ app.prepare().then(() => {
     server.get('/bar/:id', (req, res) => {
         const queryParams = { id: req.params.id || 0 }
         console.log('bar');
-        renderAndCache(req, res, '/', queryParams)
+        renderAndCache(req, res, '/bar', queryParams)
     })
 
     server.get('/signin/', (req, res) => {

@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import AppBar from './../component/organism/Appbar';
 import HomepageHeaderBlock from './../component/organism/HomepageHeaderBlock';
 
-import SigninForm from './../component/organism/SigninForm';
+import ListBar from './../component/organism/BarpageList';
 import Layout from './../component/template/LayoutFullPage';
+import HomepageFooterBlock from './../component/organism/HomepageFooterBlock';
+import HomepageNetworkBlock from './../component/organism/HomepageNetworkBlock';
 
 export default class homepage extends Component {
     static getInitialProps({ query: { id } }) {
@@ -16,7 +18,9 @@ export default class homepage extends Component {
                     <AppBar />
                     <HomepageHeaderBlock />
                     <>test : {this.props.id}</>
-                    {/* <SigninForm /> */}
+                    <ListBar />
+                    <HomepageNetworkBlock />
+                    <HomepageFooterBlock />
                 </Layout>
             </>
         )
