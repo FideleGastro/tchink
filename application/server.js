@@ -31,15 +31,15 @@ app.prepare().then(() => {
 
     // call API
 
-    async function test() {
-        try {
-            let res = await axios.get('http://localhost:4000/api/users')
+    // async function test() {
+    //     try {
+    //         let res = await axios.get('http://localhost:4000/api/users')
 
-        } catch (e) {
-            console.log(e.response) // undefined
-        }
-        return res.data
-    }
+    //     } catch (e) {
+    //         console.log(e.response) // undefined
+    //     }
+    //     return res.data
+    // }
 
     // Route app
 
@@ -50,13 +50,13 @@ app.prepare().then(() => {
 
     server.get('/', (req, res) => {
         const queryParams = { id: 'home', toto: 'toto' }
-        console.log('data:', test());
+        //console.log('data:', test());
         renderAndCache(req, res, '/', queryParams)
     })
 
     server.get('/bar/:id', (req, res) => {
         const queryParams = { id: req.params.id || 0 }
-        console.log('bar');
+        //console.log('bar');
         renderAndCache(req, res, '/bar', queryParams)
     })
 
