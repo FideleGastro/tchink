@@ -68,7 +68,7 @@ class Appbar extends Component {
                         </a>
                         <div>
                             <IconButton color="inherit" aria-label="Account">
-                                <a href='/signin'><AccountCircle /></a>
+                                <a href='/profile'><AccountCircle /></a>
                             </IconButton>
                         </div>
                     </Toolbar>

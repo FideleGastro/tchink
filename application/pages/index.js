@@ -10,8 +10,8 @@ import HomepageHeaderBlock from './../component/organism/HomepageHeaderBlock';
 import Layout from './../component/template/LayoutFullPage';
 
 export default class homepage extends Component {
-  static getInitialProps({ query: { id, toto } }) {
-    return { id, toto }
+  static getInitialProps({ query: { id, toto, logged } }) {
+    return { id, toto, logged }
   }
   render() {
     return (
@@ -19,7 +19,6 @@ export default class homepage extends Component {
         <Layout>
           <AppBar />
           <HomepageHeaderBlock />
-          <>{this.props.toto} test : {this.props.id}</>
           <HomepageInscriptionBlock />
           <HomepageStepperBlock />
           <HomepageAboutBlock />

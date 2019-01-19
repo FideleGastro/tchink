@@ -5,9 +5,9 @@ import HomepageHeaderBlock from './../component/organism/HomepageHeaderBlock';
 import SigninForm from './../component/organism/SigninForm';
 import Layout from './../component/template/LayoutFullPage';
 
-export default class homepage extends Component {
-    static getInitialProps({ query: { id, toto } }) {
-        return { id, toto }
+export default class signinpage extends Component {
+    static getInitialProps({ query: { id, logged } }) {
+        return { id, logged }
     }
     render() {
         return (
@@ -15,7 +15,6 @@ export default class homepage extends Component {
                 <Layout>
                     <AppBar />
                     <HomepageHeaderBlock />
-                    <>{this.props.toto} test : {this.props.id}</>
                     <SigninForm />
                 </Layout>
             </>

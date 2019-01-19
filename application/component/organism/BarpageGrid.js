@@ -69,25 +69,23 @@ const tileData = [
     },
 ];
 
-
 function BarpageGrid(props) {
-    const { classes } = props;
-
-
+    const { classes, store } = props;
 
     return (
         <div className={classes.root}>
             <GridList cellHeight={180} className={classes.gridList}>
-
-                {tileData.map(tile => (
+                {store.map(tile => (
                     <GridListTile key={tile.img}>
-                        <img src={tile.img} alt={tile.title} />
+                        <img src={"https://fakeimg.pl/250x100/"} alt={tile.title} />
                         <GridListTileBar
                             title={tile.title}
-                            subtitle={<span>by: {tile.author}</span>}
+                            subtitle={<span>{tile.name}</span>}
                             actionIcon={
                                 <IconButton className={classes.icon}>
-                                    <InfoIcon />
+                                    <a href={'/bar/' + tile.id} >
+                                        <InfoIcon />
+                                    </a>
                                 </IconButton>
                             }
                         />

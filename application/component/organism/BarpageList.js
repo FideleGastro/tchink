@@ -81,39 +81,34 @@ class BarpageList extends Component {
             });
     };
 
+
+
     render() {
-        const { classes } = this.props;
-        console.log('state : ', this.state);
+        const { classes, data } = this.props;
+
         return (
             <>
                 <Block>
                     <Content>
                         <Title>LES BARS</Title>
                         <div className={classes.root}>
-                            <ExpansionPanel expanded={this.state['name']} onChange={this.handleChange('name')} >
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>Category</Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <GridBar />
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
-                            <ExpansionPanel expanded={this.state['toto']} onChange={this.handleChange('toto')}>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>Category</Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <GridBar />
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
-                            <ExpansionPanel expanded={this.state['titi']} onChange={this.handleChange('titi')}>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>Category</Typography>
-                                </ExpansionPanelSummary>
-                                <ExpansionPanelDetails>
-                                    <GridBar />
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
+                            {
+                                data.category.map(
+                                    (store, index) => {
+                                        console.log('store', Object.values(data.bar).filter(x => x.type === store))
+                                        return (
+                                            <ExpansionPanel expanded={this.state[store]} onChange={this.handleChange(store)} >
+                                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                                    <Typography className={classes.heading}>{store}</Typography>
+                                                </ExpansionPanelSummary>
+                                                <ExpansionPanelDetails>
+                                                    <GridBar store={Object.values(data.bar).filter(x => x.type === store)} />
+                                                </ExpansionPanelDetails>
+                                            </ExpansionPanel>)
+                                    }
+                                )
+                            }
+
                         </div>
                     </Content>
                 </Block>

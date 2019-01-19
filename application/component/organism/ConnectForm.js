@@ -41,8 +41,8 @@ class TextFields extends React.Component {
     };
 
     onSubmit = (form) => {
-        axios.post('http://localhost:3000/signin/connection', { ...form }).then(response => {
-            console.log('res =>', response.data)
+        axios.post(window.location.host + ':' + window.location.port + '/signin/connection', { ...form }).then(response => {
+            console.log('res =>', response)
             //return response.data
         })
     };

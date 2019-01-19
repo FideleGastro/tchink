@@ -116,8 +116,8 @@ class DisplayBar extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
-
+        const { classes, bar } = this.props;
+        console.log('store => ', bar)
         return (
             <Block>
                 <Content>
@@ -130,20 +130,17 @@ class DisplayBar extends React.Component {
                         <CardContent>
                             <Grid item xs>
                                 <Typography gutterBottom variant="h4">
-                                    Toothbrush
+                                    {bar.name}
                                 </Typography>
                             </Grid>
                             <div className={classes.section2}>
                                 <div>
-                                    <Chip className={classes.chip} label="Extra Soft" />
-                                    <Chip className={classes.chip} label="Soft" />
-                                    <Chip className={classes.chip} label="Medium" />
-                                    <Chip className={classes.chip} label="Hard" />
+                                    <Chip className={classes.chip} label={bar.place} />
+                                    <Chip className={classes.chip} label={bar.type} />
                                 </div>
                             </div>
                             <Typography component="p">
-                                This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                {bar.description}
                             </Typography>
                             <WrapButton>
                                 <ContainerButton>
@@ -151,7 +148,7 @@ class DisplayBar extends React.Component {
                                         <SearchIcon />
                                     </Fab>
                                     <div>
-                                        test
+                                        18h-02h
                                     </div>
                                 </ContainerButton>
                                 <ContainerButton>
@@ -159,7 +156,7 @@ class DisplayBar extends React.Component {
                                         <SearchIcon />
                                     </Fab>
                                     <div>
-                                        test
+                                        Y aller
                                     </div>
                                 </ContainerButton>
                                 <ContainerButton>
@@ -167,7 +164,7 @@ class DisplayBar extends React.Component {
                                         <SearchIcon />
                                     </Fab>
                                     <div>
-                                        test
+                                        Contact
                                     </div>
                                 </ContainerButton>
                             </WrapButton>

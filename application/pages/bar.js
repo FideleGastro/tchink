@@ -7,9 +7,9 @@ import Layout from './../component/template/LayoutFullPage';
 import HomepageFooterBlock from './../component/organism/HomepageFooterBlock';
 import HomepageNetworkBlock from './../component/organism/HomepageNetworkBlock';
 
-export default class homepage extends Component {
-    static getInitialProps({ query: { id } }) {
-        return { id }
+export default class barpage extends Component {
+    static getInitialProps({ query: { id, data } }) {
+        return { id, data }
     }
     render() {
         return (
@@ -17,11 +17,10 @@ export default class homepage extends Component {
                 <Layout>
                     <AppBar />
                     <HomepageHeaderBlock />
-                    {/* <>test : {this.props.id}</> */}
                     {this.props.id ? (
-                        <DisplayBar />
+                        <DisplayBar bar={this.props.data.bar} />
                     ) : (
-                            <ListBar />
+                            <ListBar data={this.props.data} />
                         )}
                     <HomepageNetworkBlock />
                     <HomepageFooterBlock />

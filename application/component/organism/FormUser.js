@@ -26,6 +26,7 @@ const styles = theme => ({
 const StyledForm = styled.form`
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 `;
 
 const Container = styled.div`
@@ -54,7 +55,7 @@ class TextFields extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
+        const { classes, user } = this.props;
         return (
             <Container>
                 {console.log('state =>', this.state)}
@@ -66,6 +67,7 @@ class TextFields extends React.Component {
                         fullWidth
                         margin="normal"
                         type="email"
+                        value={user.name}
                         onChange={this.handleChange('name')}
                     />
                     <TextField
@@ -75,6 +77,7 @@ class TextFields extends React.Component {
                         fullWidth
                         margin="normal"
                         type="email"
+                        value={user.email}
                         onChange={this.handleChange('email')}
                     />
                     <TextField
@@ -84,6 +87,7 @@ class TextFields extends React.Component {
                         fullWidth
                         margin="normal"
                         type="date"
+                        value={user.age.split('T')[0]}
                         onChange={this.handleChange('age')}
                         InputLabelProps={{ shrink: true }}
                     />
@@ -94,6 +98,7 @@ class TextFields extends React.Component {
                         fullWidth
                         margin="normal"
                         type="password"
+                        value={user.password}
                         onChange={this.handleChange('password')}
                     />
                     <TextField
@@ -103,10 +108,11 @@ class TextFields extends React.Component {
                         fullWidth
                         margin="normal"
                         type="number"
+                        value={user.phone}
                         onChange={this.handleChange('phone')}
                     />
                     <Button onClick={() => this.onSubmit(this.state)} variant="contained" color="primary" className={classes.button}>
-                        CRÉER MON COMPTE
+                        MODIFIFER SES INFOS
                     </Button>
                 </StyledForm>
             </Container>
