@@ -4,11 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "api": "npm start --prefix datamanager/",
     "start": "npm run start --prefix application/",
-    "build": "npm run api && npm run build --prefix application/",
-    "dev": "npm run dev2 --prefix application/",
-    "heroku-postbuild": "npm run heroku-postbuild --prefix datamanager/ && npm run heroku-postbuild --prefix application/"
+    "build": "npm start --prefix datamanager/ && npm run build --prefix application/"
   },
   "author": "",
   "license": "ISC"
