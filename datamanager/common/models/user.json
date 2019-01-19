@@ -1,0 +1,55 @@
+{
+  "name": "user",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "age": {
+      "type": "date",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": false
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "updateAt": {
+      "type": "date"
+    },
+    "subscription": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "stores": {
+      "type": "hasOne",
+      "model": "store",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

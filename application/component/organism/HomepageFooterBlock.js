@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
 
 const Block = styled.div`
     width: 100%;
@@ -57,10 +56,8 @@ class HomepageFooterBlock extends Component {
                     <Content>
                         <Title>Ceci est un Footer </Title>
                         <p>ceci est la description du footer</p>
-
                     </Content>
                 </Block>
-
             </>
         )
     }

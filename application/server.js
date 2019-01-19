@@ -53,10 +53,16 @@ app.prepare().then(() => {
         //console.log('data:', test());
         renderAndCache(req, res, '/', queryParams)
     })
+    
+    server.get('/bar/', (req, res) => {
+        const queryParams = { id: req.params.id || 0 }
+        console.log('bar');
+        renderAndCache(req, res, '/bar', queryParams)
+    })
 
     server.get('/bar/:id', (req, res) => {
         const queryParams = { id: req.params.id || 0 }
-        //console.log('bar');
+        console.log('bar '+ req.params.id);
         renderAndCache(req, res, '/bar', queryParams)
     })
 

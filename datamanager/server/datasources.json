@@ -1,0 +1,11 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongoMlab": {
+    "url": "mongodb://admin:admin1@ds261644.mlab.com:61644/tchink",
+    "name": "mongoMlab",
+    "connector": "mongodb"
+  }
+}

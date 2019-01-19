@@ -37,7 +37,19 @@
     "public": false
   },
   "user": {
-    "dataSource": "mongo",
+    "dataSource": "mongoMlab",
+    "public": true
+  },
+  "store": {
+    "dataSource": "mongoMlab",
+    "public": true
+  },
+  "offer": {
+    "dataSource": "mongoMlab",
+    "public": true
+  },
+  "order": {
+    "dataSource": "mongoMlab",
     "public": true
   }
 }

@@ -1,0 +1,33 @@
+{
+  "name": "offer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "condition1": {
+      "type": "string"
+    },
+    "condition2": {
+      "type": "string"
+    },
+    "condition3": {
+      "type": "string"
+    },
+    "drink": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

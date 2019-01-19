@@ -9,7 +9,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import GridBar from './BarpageGrid';
 
 const Block = styled.div`
-    width: 95%;
+    width: 100%;
     min-height: 70%;
     background: yellow;
     display: flex;
@@ -51,7 +51,7 @@ const Text = styled.h4`
 
 const styles = theme => ({
     root: {
-        width: '95%',
+        maxWidth: 400,
 
     },
     heading: {
@@ -61,15 +61,36 @@ const styles = theme => ({
 });
 
 class BarpageList extends Component {
+    state = {
+        name: true,
+    };
+
+    handleChange = name => event => {
+        Object.keys(this.state).map(x => {
+            this.setState({
+                [x]: false,
+            })
+        });
+        if (this.state[name] === undefined)
+            this.setState({
+                [name]: true,
+            });
+        else
+            this.setState({
+                [name]: !this.state[name],
+            });
+    };
+
     render() {
         const { classes } = this.props;
+        console.log('state : ', this.state);
         return (
             <>
                 <Block>
                     <Content>
                         <Title>LES BARS</Title>
                         <div className={classes.root}>
-                            <ExpansionPanel>
+                            <ExpansionPanel expanded={this.state['name']} onChange={this.handleChange('name')} >
                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                                     <Typography className={classes.heading}>Category</Typography>
                                 </ExpansionPanelSummary>
@@ -77,7 +98,7 @@ class BarpageList extends Component {
                                     <GridBar />
                                 </ExpansionPanelDetails>
                             </ExpansionPanel>
-                            <ExpansionPanel>
+                            <ExpansionPanel expanded={this.state['toto']} onChange={this.handleChange('toto')}>
                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                                     <Typography className={classes.heading}>Category</Typography>
                                 </ExpansionPanelSummary>
@@ -85,7 +106,7 @@ class BarpageList extends Component {
                                     <GridBar />
                                 </ExpansionPanelDetails>
                             </ExpansionPanel>
-                            <ExpansionPanel>
+                            <ExpansionPanel expanded={this.state['titi']} onChange={this.handleChange('titi')}>
                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                                     <Typography className={classes.heading}>Category</Typography>
                                 </ExpansionPanelSummary>

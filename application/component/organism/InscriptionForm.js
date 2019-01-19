@@ -29,7 +29,7 @@ const StyledForm = styled.form`
 `;
 
 const Container = styled.div`
-    height: 70vh;
+    height: auto;
     background: white;
     display: flex;
     align-items: center;
