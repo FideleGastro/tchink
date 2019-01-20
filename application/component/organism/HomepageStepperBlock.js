@@ -10,7 +10,6 @@ import Typography from '@material-ui/core/Typography';
 const Block = styled.div`
     width: 100%;
     min-height: 50vh;
-    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +48,9 @@ const Title = styled.h2`
 `;
 
 const styles = theme => ({
-
+    content: {
+        background: '#fafafa',
+    },
     button: {
         marginRight: theme.spacing.unit,
     },
@@ -153,7 +154,7 @@ class HomepageStepperBlock extends React.Component {
         return (
             <Block>
                 <Content>
-                    <Stepper alternativeLabel nonLinear activeStep={activeStep}>
+                    <Stepper className={classes.content} alternativeLabel nonLinear activeStep={activeStep}>
                         {steps.map((label, index) => {
                             return (
                                 <Step key={label}>

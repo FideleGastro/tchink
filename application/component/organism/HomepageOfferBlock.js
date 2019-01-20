@@ -9,7 +9,6 @@ import Typography from '@material-ui/core/Typography';
 const Block = styled.div`
     width: 100%;
     min-height: 50vh;
-    background: white;
     display: flex;
     align-items: center;
     justify-content: center;

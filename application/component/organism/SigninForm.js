@@ -28,6 +28,9 @@ const styles = theme => ({
         width: '100%',
         height: '100%'
     },
+    direction: {
+        backgroundColor: theme.palette.background.paper,
+    },
 });
 
 class FullWidthTabs extends React.Component {
@@ -47,7 +50,7 @@ class FullWidthTabs extends React.Component {
         const { classes, theme } = this.props;
 
         return (
-            <div className={classes.root}>
+            <div>
                 <AppBar position="static" color="default">
                     <Tabs
                         value={this.state.value}
@@ -65,8 +68,8 @@ class FullWidthTabs extends React.Component {
                     index={this.state.value}
                     onChangeIndex={this.handleChangeIndex}
                 >
-                    <TabContainer dir={theme.direction}><InscriptionForm /></TabContainer>
-                    <TabContainer dir={theme.direction}><ConnectForm /></TabContainer>
+                    <TabContainer ><InscriptionForm /></TabContainer>
+                    <TabContainer ><ConnectForm /></TabContainer>
                 </SwipeableViews>
             </div>
         );

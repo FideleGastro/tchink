@@ -5,12 +5,12 @@ import Link from 'next/link'
 const Block = styled.div`
     width: 100%;
     min-height: 50px;
-    background: purple  ;
+    background: #f4f4f4;
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;  
+    z-index: 10;
 `;
 
 const Content = styled.div`
@@ -21,30 +21,20 @@ const Content = styled.div`
   
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
     font-family: Montserrat;
-    font-size: 28px;
+    font-size: 35px;
     font-weight: 600;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.21;
     letter-spacing: normal;
     text-align: center;
-    color: #484848;
-    margin: 0;
+    color: #9c27b0;
+    margin: 0 10px;
+   
 `;
 
-const Text = styled.h4`
-  font-family: Montserrat;
-  font-size: 20px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #484848;
-`;
 
 class HomepageHeaderBlock extends Component {
     render() {
@@ -52,7 +42,7 @@ class HomepageHeaderBlock extends Component {
             <>
                 <Block>
                     <Content>
-                        <Title>TCHINK</Title>
+                        <Title>TCH!NK</Title>
                     </Content>
                 </Block>
             </>

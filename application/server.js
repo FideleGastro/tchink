@@ -60,6 +60,13 @@ app.prepare().then(() => {
         return res
     }
 
+    async function PatchUser(body, id) {
+        //TODO: check body
+        res = await axios.patch(apiRoot + '/api/users/' + id, { ...body });
+        //TODO: catch error
+        return res
+    }
+
     // async function getUser(id) {
     //     //TODO: check body
     //     res = await axios.post('http://localhost:4000/api/users/' + id);
@@ -126,6 +133,12 @@ app.prepare().then(() => {
         const User = PostUser(req.body)
         // TODO: catch error & 401
         User.then(data => res.status(201).send('inscription'))
+    })
+
+    server.post('/profile/update/:id', (req, res) => {
+        const User = PatchUser(req.body, req.params.id)
+        // TODO: catch error & 401
+        User.then(data => res.status(200).send('update'))
     })
 
     server.get('/clear/', (req, res) => {

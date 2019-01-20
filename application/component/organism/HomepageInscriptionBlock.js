@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Block = styled.div`
     width: 100%;
     min-height: 50vh;
-    background: yellow;
+    background: #cee3ff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,7 @@ const LinkRounded = styled.a`
     color: #6e6e6e;
     padding: 10px;
     text-align:center;
-    
+    text-decoration: none;
 `;
 
 class HomepageInscriptionBlock extends Component {
@@ -54,7 +54,7 @@ class HomepageInscriptionBlock extends Component {
                 <Block>
                     <Content>
                         <Title>L’APP QUI RÉVOLUTIONNE VOS SOIRÉES</Title>
-                        <Link href='/about'><LinkRounded>JE M’INSCRIS </LinkRounded></Link>
+                        <LinkRounded href='/signin'>JE M’INSCRIS </LinkRounded>
                     </Content>
                 </Block>
 

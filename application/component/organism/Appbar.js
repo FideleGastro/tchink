@@ -28,6 +28,7 @@ const styles = theme => ({
     appBar: {
         top: 'auto',
         bottom: 0,
+        backgroundColor: '#f4f4f4',
     },
     toolbar: {
         alignItems: 'center',
@@ -40,6 +41,10 @@ const styles = theme => ({
         left: 0,
         right: 0,
         margin: '0 auto',
+        background: '#9c27b0',
+    },
+    icon: {
+        color: '#9c27b0',
     },
 });
 
@@ -49,11 +54,11 @@ class Appbar extends Component {
         const { classes } = this.props;
         return (
             <div>
-                <AppBar position="fixed" color="primary" className={classes.appBar}>
+                <AppBar position="fixed" className={classes.appBar}>
                     <Toolbar className={classes.toolbar}>
                         <a href='/'>
-                            <IconButton color="inherit" aria-label="Home">
-                                <Home />
+                            <IconButton aria-label="Home">
+                                <Home className={classes.icon} />
                                 {/* test :
                             <Store.Consumer>
                                 {value => value.logged}
@@ -62,13 +67,13 @@ class Appbar extends Component {
                             </IconButton>
                         </a>
                         <a href='/bar'>
-                            <Fab color="secondary" aria-label="Search" className={classes.fabButton}>
+                            <Fab aria-label="Search" className={classes.fabButton}>
                                 <SearchIcon />
                             </Fab>
                         </a>
                         <div>
-                            <IconButton color="inherit" aria-label="Account">
-                                <a href='/profile'><AccountCircle /></a>
+                            <IconButton aria-label="Account">
+                                <a href='/profile'><AccountCircle className={classes.icon} /></a>
                             </IconButton>
                         </div>
                     </Toolbar>

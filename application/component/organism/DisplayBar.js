@@ -29,7 +29,6 @@ import Paper from '@material-ui/core/Paper';
 const Block = styled.div`
     width: 100%;
     min-height: 100%;
-    background: white;
     display: flex;
     align-items: start;
     justify-content: center;
@@ -39,7 +38,6 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     text-align:center;
-    border: 2px solid green;
 `;
 
 const ContainerButton = styled.div`
@@ -56,9 +54,14 @@ const WrapButton = styled.div`
     margin-bottom: 10px;
 `;
 
+const LabelButton = styled.div`
+   font-size: 11px;
+   color: grey;
+`;
+
 const styles = theme => ({
     card: {
-        maxWidth: 400,
+        Width: 400,
         marginTop: '20px',
     },
     media: {
@@ -94,10 +97,12 @@ const styles = theme => ({
         margin: `${theme.spacing.unit * 6}px ${theme.spacing.unit * 2}px ${theme.spacing.unit * 2}px`,
     },
     fab: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing.unit * 2,
+        height: '40px',
+        width: '40px',
     },
     demo: {
-        backgroundColor: theme.palette.background.paper,
+
         marginTop: '20px',
     },
     title: {
@@ -147,25 +152,25 @@ class DisplayBar extends React.Component {
                                     <Fab color="primary" aria-label="Add" label="testtest" className={classes.fab}>
                                         <SearchIcon />
                                     </Fab>
-                                    <div>
+                                    <LabelButton>
                                         18h-02h
-                                    </div>
+                                    </LabelButton>
                                 </ContainerButton>
                                 <ContainerButton>
                                     <Fab color="primary" aria-label="Add" label="testtest" className={classes.fab}>
                                         <SearchIcon />
                                     </Fab>
-                                    <div>
+                                    <LabelButton>
                                         Y aller
-                                    </div>
+                                    </LabelButton>
                                 </ContainerButton>
                                 <ContainerButton>
                                     <Fab color="primary" aria-label="Add" label="testtest" className={classes.fab}>
                                         <SearchIcon />
                                     </Fab>
-                                    <div>
+                                    <LabelButton>
                                         Contact
-                                    </div>
+                                    </LabelButton>
                                 </ContainerButton>
                             </WrapButton>
                         </CardContent>

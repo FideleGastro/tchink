@@ -31,7 +31,6 @@ const StyledForm = styled.form`
 
 const Container = styled.div`
     height: auto;
-    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,8 +40,8 @@ class TextFields extends React.Component {
     state = {
     };
 
-    onSubmit = (form) => {
-        axios.post('/signin/inscription', { ...form }).then(response => {
+    onSubmit = (form, id) => {
+        axios.post('/profile/update/' + id, { ...form }).then(response => {
             console.log('res =>', response.data)
             //return response.data
         })
@@ -56,6 +55,7 @@ class TextFields extends React.Component {
 
     render() {
         const { classes, user } = this.props;
+        console.log('props USER =>', user)
         return (
             <Container>
                 {console.log('state =>', this.state)}
@@ -67,7 +67,7 @@ class TextFields extends React.Component {
                         fullWidth
                         margin="normal"
                         type="email"
-                        value={user.name}
+                        value={this.state.name || user.name}
                         onChange={this.handleChange('name')}
                     />
                     <TextField
@@ -77,7 +77,7 @@ class TextFields extends React.Component {
                         fullWidth
                         margin="normal"
                         type="email"
-                        value={user.email}
+                        value={this.state.email || user.email}
                         onChange={this.handleChange('email')}
                     />
                     <TextField
@@ -87,7 +87,7 @@ class TextFields extends React.Component {
                         fullWidth
                         margin="normal"
                         type="date"
-                        value={user.age.split('T')[0]}
+                        value={this.state.age || user.age.split('T')[0]}
                         onChange={this.handleChange('age')}
                         InputLabelProps={{ shrink: true }}
                     />
@@ -98,7 +98,7 @@ class TextFields extends React.Component {
                         fullWidth
                         margin="normal"
                         type="password"
-                        value={user.password}
+                        value={this.state.password || user.password}
                         onChange={this.handleChange('password')}
                     />
                     <TextField
@@ -108,10 +108,10 @@ class TextFields extends React.Component {
                         fullWidth
                         margin="normal"
                         type="number"
-                        value={user.phone}
+                        value={this.state.phone || user.phone}
                         onChange={this.handleChange('phone')}
                     />
-                    <Button onClick={() => this.onSubmit(this.state)} variant="contained" color="primary" className={classes.button}>
+                    <Button onClick={() => this.onSubmit(this.state, user.id)} variant="contained" color="primary" className={classes.button}>
                         MODIFIFER SES INFOS
                     </Button>
                 </StyledForm>

@@ -104,7 +104,6 @@ class FullWidthTabs extends React.Component {
             <div className={classes.root}>
                 <Block>
                     <Content>
-
                         <AppBar position="static" color="default">
                             <Tabs
                                 value={this.state.value}

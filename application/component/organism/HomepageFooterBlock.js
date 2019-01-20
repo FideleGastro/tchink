@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const Block = styled.div`
     width: 100%;
     min-height: 50%;
-    background: white;
     display: flex;
     align-items: center;
     justify-content: center;

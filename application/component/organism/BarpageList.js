@@ -11,7 +11,7 @@ import GridBar from './BarpageGrid';
 const Block = styled.div`
     width: 100%;
     min-height: 70%;
-    background: yellow;
+    margin: 50px 0; 
     display: flex;
     align-items: start;
     justify-content: center;

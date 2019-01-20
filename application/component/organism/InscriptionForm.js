@@ -30,7 +30,6 @@ const StyledForm = styled.form`
 
 const Container = styled.div`
     height: auto;
-    background: white;
     display: flex;
     align-items: center;
     justify-content: center;

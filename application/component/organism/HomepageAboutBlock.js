@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Block = styled.div`
     width: 100%;
     min-height: 50vh;
-    background: yellow;
+    background: #cee3ff;
     display: flex;
     align-items: center;
     justify-content: center;
