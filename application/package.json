@@ -8,7 +8,7 @@
     "dev": "next",
     "dev2": "npm run clean:build && npm run build:soft && npm run start:prod",
     "start:prod": "NODE_ENV=production node server.js",
-    "start": "node server.js -p $PORT",
+    "start": "npm run build && node server.js -p $PORT",
     "build": "npm i && npm run clean:build &&  next build",
     "build:soft": "next build",
     "start:next": " next start",
