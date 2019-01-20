@@ -46,7 +46,6 @@ app.prepare().then(() => {
     async function fetchProfile(id) {
         if (id) {
             profileFromApi = await axios.get(apiRoot + '/api/users/' + id);
-            //console.log('fetchProfile', 'http://localhost:4000/api/users/' + id)
             return { user: { ...profileFromApi.data } }
         }
         return { user: {} }
@@ -72,10 +71,8 @@ app.prepare().then(() => {
         //TODO: check body
         res = await axios.get(apiRoot + '/api/users/count?where=%7B%22name%22%3A%22' + body.email + '%22%2C%20%22password%22%20%3A%20%22' + body.password + '%22%7D');
         //TODO: catch error 
-        console.log("res =>", res.data)
         if (res.data.count === 1) {
             user = await axios.get(apiRoot + '/api/users?filter=%7B%20%22where%22%20%3A%20%7B%22email%22%3A%22' + body.email + '%22%2C%20%22password%22%20%3A%20%22' + body.password + '%22%7D%7D')
-            console.log("user =>", user.data, body.email, body.password)
             return user.data
         }
         else
@@ -86,7 +83,6 @@ app.prepare().then(() => {
 
     server.get('/', (req, res) => {
         const queryParams = { id: 'home', toto: 'toto' }
-        //console.log('data:', test());
         renderAndCache(req, res, '/', queryParams)
     })
 
@@ -119,7 +115,6 @@ app.prepare().then(() => {
         //TODO: set expires
         User.then(data => {
             if (data.length === 1) {
-                console.log('cookie', data)
                 const cookies = require('cookie-universal')(req, res)
                 cookies.set('_tchink', data[0].id)
             }
@@ -131,11 +126,11 @@ app.prepare().then(() => {
         const User = PostUser(req.body)
         // TODO: catch error & 401
         User.then(data => res.status(201).send('inscription'))
-        console.log('=> log: form inscription: ', req.body)
     })
 
     server.get('/clear/', (req, res) => {
-        console.log(`clear`)
+        const cookies = require('cookie-universal')(req, res)
+        cookies.removeAll()
         ssrCache.reset()
         res.send('clear')
     })
@@ -164,10 +159,8 @@ function getCacheKey(req) {
 
 function isLogged(req, res) {
     const cookies = require('cookie-universal')(req, res)
-    res = cookies.get('_tchink')
-    console.log('cookies =>', res);
-    //(res) ? return false : return false
-    if (res)
+    resCookie = cookies.get('_tchink')
+    if (resCookie)
         return true;
     else
         return false
@@ -175,9 +168,8 @@ function isLogged(req, res) {
 
 function getLogged(req, res) {
     const cookies = require('cookie-universal')(req, res)
-    res = cookies.get('_tchink')
-    console.log('cookies =>', res);
-    return res
+    resCookie = cookies.get('_tchink')
+    return resCookie
 }
 
 async function renderAndCache(req, res, pagePath, queryParams) {

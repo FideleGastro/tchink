@@ -41,7 +41,7 @@ class TextFields extends React.Component {
     };
 
     onSubmit = (form) => {
-        axios.post((process.env.PATH_APPLICATION || 'http://localhost:3000') + '/signin/connection', { ...form }).then(response => {
+        axios.post('/signin/connection', { ...form }).then(response => {
             console.log('res =>', response)
             //return response.data
         })
