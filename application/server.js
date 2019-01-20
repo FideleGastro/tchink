@@ -10,8 +10,8 @@ const { join } = require('path')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
-const applicationRoot = (process.env.PATH_APPLICATION || 'http://localhost') + ':4000'
-
+//const applicationRoot = (process.env.PATH_APPLICATION || 'http://localhost') + ':4000'
+const applicationRoot = 'https://api-tchink.herokuapp.com'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
@@ -44,10 +44,12 @@ app.prepare().then(() => {
     }
 
     async function fetchProfile(id) {
-        if (id)
+        if (id) {
             profileFromApi = await axios.get(applicationRoot + '/api/users/' + id);
-        //console.log('fetchProfile', 'http://localhost:4000/api/users/' + id)
-        return { user: { ...profileFromApi.data } }
+            //console.log('fetchProfile', 'http://localhost:4000/api/users/' + id)
+            return { user: { ...profileFromApi.data } }
+        }
+        return { user: {} }
     }
 
     // call API
